@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Route, NavLink } from 'react-router-dom'
 import './App.css';
 
+import Github from './Github.js'
+
 class App extends Component {
   render() {
     return (
@@ -9,7 +11,7 @@ class App extends Component {
         <div className="App-header">
           <div className="App-headings">
             <h3>Ain{"'"}t no party like an</h3>
-            <h1>API Party</h1>
+            <NavLink to='/'><h1>API Party</h1></NavLink>
           </div>
           <ul className="nav-links">
             <li>
@@ -18,7 +20,7 @@ class App extends Component {
           </ul>
         </div>
         <Switch>
-          <Route path='/github' render={() => <h1>Github!</h1>} />
+          <Route path='/github' component={ Github } />
           <Route render={() => <p>To get started, click one of the links above</p>} />
         </Switch>
       </div>
